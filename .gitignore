@@ -27,4 +27,4 @@ Manifest.toml
 *.py
 *.ipynb
 
-*_old
+*_save
