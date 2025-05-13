@@ -1,0 +1,31 @@
+{"task_id": 4, "completion_id": 0, "solution": ""}
+{"task_id": 5, "completion_id": 0, "solution": "def scalar_multiply(matrix: list[list[int | float]], scalar: int | float) -> list[list[int | float]]:\n    return [[element * scalar for element in row] for row in matrix]"}
+{"task_id": 8, "completion_id": 0, "solution": "def inverse_2x2(matrix: list[list[float]]) -> list[list[float]]:\n    (a, b, c, d) = (matrix[0][0], matrix[0][1], matrix[1][0], matrix[1][1])\n    determinant = a * d - b * c\n    if determinant == 0:\n        return None\n    inv_a = d / determinant\n    inv_b = -b / determinant\n    inv_c = -c / determinant\n    inv_d = a / determinant\n    return [[inv_a, inv_b], [inv_c, inv_d]]"}
+{"task_id": 22, "completion_id": 0, "solution": "import math\ndef sigmoid(z: float) -> float:\n    exp_z = math.exp(-z)\n    denominator = 1 + exp_z\n    result = 1 / denominator\n    return round(result, 4)"}
+{"task_id": 23, "completion_id": 0, "solution": "import math\ndef softmax(scores: list[float]) -> list[float]:\n    if not scores:\n        return []\n    exponentials = [math.exp(score) for score in scores]\n    sum_exp = sum(exponentials)\n    probabilities = [exp / sum_exp for exp in exponentials]\n    rounded = [round(prob, 4) for prob in probabilities]\n    return rounded"}
+{"task_id": 29, "completion_id": 0, "solution": "import numpy as np\ndef shuffle_data(X, y, seed=None):\n    data = list(zip(np.arange(len(X)), X, y))\n    if seed is not None:\n        np.random.seed(seed)\n    np.random.shuffle(data)\n    new_X = [item[1] for item in data]\n    new_y = [item[2] for item in data]\n    new_X = np.array(new_X).tolist()\n    new_y = np.array(new_y).tolist()\n    return [new_X, new_y]"}
+{"task_id": 31, "completion_id": 0, "solution": "import numpy as np\ndef divide_on_feature(X, feature_i, threshold):\n    condition_subset = X[np.where(X[:, feature_i] >= threshold)[0]]\n    other_subset = X[np.where(X[:, feature_i] < threshold)[0]]\n    return [condition_subset, other_subset]"}
+{"task_id": 35, "completion_id": 0, "solution": "import numpy as np\ndef make_diagonal(x):\n    return np.array(np.diag(x)).tolist()"}
+{"task_id": 36, "completion_id": 0, "solution": "import numpy as np\ndef accuracy_score(y_true, y_pred):\n    correct = np.sum(y_true == y_pred)\n    total = len(y_true)\n    accuracy = correct / total\n    return round(accuracy, 4)"}
+{"task_id": 42, "completion_id": 0, "solution": "def relu(z: float) -> float:\n    if z > 0:\n        return z\n    else:\n        return 0"}
+{"task_id": 43, "completion_id": 0, "solution": ""}
+{"task_id": 44, "completion_id": 0, "solution": "def leaky_relu(z: float, alpha: float=0.01) -> float:\n    if z <= 0:\n        return z\n    else:\n        return alpha * z"}
+{"task_id": 45, "completion_id": 0, "solution": "import numpy as np\ndef kernel_function(x1, x2):\n    return np.dot(x1, x2)"}
+{"task_id": 64, "completion_id": 0, "solution": ""}
+{"task_id": 73, "completion_id": 0, "solution": ""}
+{"task_id": 75, "completion_id": 0, "solution": ""}
+{"task_id": 80, "completion_id": 0, "solution": "import math\ndef normal_pdf(x, mean, std_dev):\n    exponent = (x - mean) ** 2 / (2 * std_dev ** 2)\n    value = 1 / math.sqrt(2 * math.pi) * math.exp(-exponent)\n    return round(value, 5)"}
+{"task_id": 81, "completion_id": 0, "solution": ""}
+{"task_id": 82, "completion_id": 0, "solution": "import numpy as np\ndef calculate_contrast(img):\n    \"\"\"\n    Calculate the contrast of a grayscale image.\n    \n    Args:\n        img (numpy.ndarray): 2D array representing a grayscale image with pixel values between 0 and 255.\n    \n    Returns:\n        int: The contrast value of the image.\n    \"\"\"\n    max_val = np.max(img)\n    min_val = np.min(img)\n    return max_val - min_val"}
+{"task_id": 83, "completion_id": 0, "solution": "import numpy as np\ndef calculate_dot_product(vec1, vec2):\n    \"\"\"\n    Calculate the dot product of two vectors.\n    Args:\n        vec1 (numpy.ndarray): 1D array representing the first vector.\n        vec2 (numpy.ndarray): 1D array representing the second vector.\n    \"\"\"\n    return np.dot(vec1, vec2)"}
+{"task_id": 86, "completion_id": 0, "solution": ""}
+{"task_id": 93, "completion_id": 0, "solution": "import numpy as np\ndef mae(y_true, y_pred):\n    absolute_diffs = np.abs(y_true - y_pred)\n    mae = np.mean(absolute_diffs)\n    return round(mae, 3)"}
+{"task_id": 96, "completion_id": 0, "solution": "def hard_sigmoid(x: float) -> float:\n    return max(0.0, min(1.0, 0.5 * (1 + x)))"}
+{"task_id": 98, "completion_id": 0, "solution": "def prelu(x: float, alpha: float=0.25) -> float:\n    if x > 0:\n        return x\n    else:\n        return x * alpha"}
+{"task_id": 100, "completion_id": 0, "solution": "def softsign(x: float) -> float:\n    result = x / (1 + abs(x))\n    return round(result, 4)"}
+{"task_id": 102, "completion_id": 0, "solution": "import math\ndef swish(x: float) -> float:\n    sigmoid = 1 / (1 + math.exp(-x))\n    swish_val = x * sigmoid\n    return round(swish_val, 4)"}
+{"task_id": 104, "completion_id": 0, "solution": "import numpy as np"}
+{"task_id": 114, "completion_id": 0, "solution": "import numpy as np\ndef global_avg_pool(x: np.ndarray):\n    return x.mean(axis=(0, 1))"}
+{"task_id": 116, "completion_id": 0, "solution": ""}
+{"task_id": 118, "completion_id": 0, "solution": ""}
+{"task_id": 121, "completion_id": 0, "solution": "def vector_sum(a: list[int | float], b: list[int | float]) -> list[int | float]:\n    if len(a) != len(b):\n        return -1\n    return [a[i] + b[i] for i in range(len(a))]"}
