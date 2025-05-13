@@ -26,3 +26,5 @@ Manifest.toml
 *.sh
 *.py
 *.ipynb
+
+*_old
